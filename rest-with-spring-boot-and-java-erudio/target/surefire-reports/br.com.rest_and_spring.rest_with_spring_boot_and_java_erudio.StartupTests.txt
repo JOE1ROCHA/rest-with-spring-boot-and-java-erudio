@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: br.com.rest_and_spring.rest_with_spring_boot_and_java_erudio.StartupTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.353 s -- in br.com.rest_and_spring.rest_with_spring_boot_and_java_erudio.StartupTests

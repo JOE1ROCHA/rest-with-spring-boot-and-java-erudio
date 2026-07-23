@@ -1,6 +1,6 @@
-package br.com.controller;
+package br.com.rest_and_spring.rest_with_spring_boot_and_java_erudio.controller;
 
-import br.com.model.Greeting;
+import br.com.rest_and_spring.rest_with_spring_boot_and_java_erudio.model.Greeting;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
