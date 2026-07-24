@@ -1,13 +1,73 @@
 package br.com.rest_and_spring.rest_with_spring_boot_and_java_erudio;
 
+import br.com.rest_and_spring.rest_with_spring_boot_and_java_erudio.model.Person;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 
 @Service
-public class PersonService {
+public class PersonServices {
 
     private final AtomicLong counter = new AtomicLong();
-    private Logger logger = Logger.getLogger(PersonServices)
+    private Logger logger = Logger.getLogger(PersonServices.class.getName());
+
+    public List<Person> findAll(){
+        logger.info("finding all People");
+
+        List<Person> persons = new ArrayList<Person>();
+
+        for (int i = 0; i<8; i++){
+            Person person = mockPerson(i);
+            persons.add(person);
+
+        }
+        return persons;
+    }
+
+
+    public Person findById(String id){
+
+        logger.info("finding one Person");
+
+        Person person = new Person();
+
+        person.setId(counter.incrementAndGet());
+        person.setFirstName("Joel");
+        person.setLastName("Rocha");
+        person.setAddress("Morada nova - Ceara - Brasil");
+        person.setGender("Male");
+
+        return person;
+    }
+    public Person create(Person person){
+
+        logger.info("creating one Person");
+        return person;
+    }
+    public Person update(Person person){
+
+        logger.info("updating one Person");
+        return person;
+    }
+
+    public void delete(String id){
+        logger.info("deleting one person");
+    }
+
+    private Person mockPerson(int i){
+        logger.info("finding one Person");
+
+        Person person = new Person();
+
+        person.setId(counter.incrementAndGet());
+        person.setFirstName("FirstName" + i);
+        person.setLastName("LastName" + i);
+        person.setAddress("Some dress in Brasil");
+        person.setGender("Male");
+
+        return person;
+    }
 }
