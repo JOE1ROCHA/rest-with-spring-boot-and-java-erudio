@@ -1,4 +1,4 @@
-package br.com.rest_and_spring.rest_with_spring_boot_and_java_erudio;
+package br.com.rest_and_spring.rest_with_spring_boot_and_java_erudio.services;
 
 import br.com.rest_and_spring.rest_with_spring_boot_and_java_erudio.model.Person;
 import org.springframework.stereotype.Service;
@@ -35,9 +35,9 @@ public class PersonServices {
         Person person = new Person();
 
         person.setId(counter.incrementAndGet());
-        person.setFirstName("Joel");
-        person.setLastName("Rocha");
-        person.setAddress("Morada nova - Ceara - Brasil");
+        person.setNome("Joel");
+        person.setIdade(26);
+        person.setNacionalidade("Morada nova - Ceara - Brasil");
         person.setGender("Male");
 
         return person;
@@ -63,9 +63,9 @@ public class PersonServices {
         Person person = new Person();
 
         person.setId(counter.incrementAndGet());
-        person.setFirstName("FirstName" + i);
-        person.setLastName("LastName" + i);
-        person.setAddress("Some dress in Brasil");
+        person.setNome("FirstName" + i);
+        person.setIdade(20 + i);
+        person.setNacionalidade("Some dress in Brasil");
         person.setGender("Male");
 
         return person;

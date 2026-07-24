@@ -1,16 +1,31 @@
 package br.com.rest_and_spring.rest_with_spring_boot_and_java_erudio.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "Dublador")
 public class Person implements Serializable {
 
     private static final long serialVersionVID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String firstName;
-    private String lastName;
-    private String address;
+
+    @Column(nullable = false)
+    private String nome;
+    private int idade;
+    private String nacionalidade;
+
+    @Column(length = 8)
     private String gender;
 
     public Person() {}
@@ -23,28 +38,28 @@ public class Person implements Serializable {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getNome() {
+        return nome;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getLastName() {
-        return lastName;
+    public int getIdade() {
+        return idade;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 
-    public String getAddress() {
-        return address;
+    public String getNacionalidade() {
+        return nacionalidade;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setNacionalidade(String nacionalidade) {
+        this.nacionalidade = nacionalidade;
     }
 
     public String getGender() {
@@ -58,11 +73,11 @@ public class Person implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Person person)) return false;
-        return getId() == person.getId() && Objects.equals(getFirstName(), person.getFirstName()) && Objects.equals(getLastName(), person.getLastName()) && Objects.equals(getAddress(), person.getAddress()) && Objects.equals(getGender(), person.getGender());
+        return getId() == person.getId() && Objects.equals(getNome(), person.getNome()) && Objects.equals(getIdade(), person.getIdade()) && Objects.equals(getNacionalidade(), person.getNacionalidade()) && Objects.equals(getGender(), person.getGender());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getFirstName(), getLastName(), getAddress(), getGender());
+        return Objects.hash(getId(), getNome(), getIdade(), getNacionalidade(), getGender());
     }
 }
