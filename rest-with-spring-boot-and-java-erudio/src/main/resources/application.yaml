@@ -15,3 +15,8 @@ spring:
     show-sql: false
 
     open-in-view: false
+
+logging:
+  level:
+    root: WARN
+    #3br.com.rest-with-spring-boot-and-java-erudio: WARN

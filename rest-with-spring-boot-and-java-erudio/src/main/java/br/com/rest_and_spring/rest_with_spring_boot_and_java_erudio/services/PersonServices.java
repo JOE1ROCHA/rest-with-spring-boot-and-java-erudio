@@ -3,18 +3,19 @@ package br.com.rest_and_spring.rest_with_spring_boot_and_java_erudio.services;
 import br.com.rest_and_spring.rest_with_spring_boot_and_java_erudio.Exception.ResourceNotFoudException;
 import br.com.rest_and_spring.rest_with_spring_boot_and_java_erudio.model.Person;
 import br.com.rest_and_spring.rest_with_spring_boot_and_java_erudio.repository.PersonRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.logging.Logger;
 
 @Service
 public class PersonServices {
 
     private final AtomicLong counter = new AtomicLong();
-    private Logger logger = Logger.getLogger(PersonServices.class.getName());
+    private Logger logger = LoggerFactory.getLogger(PersonServices.class.getName());
 
     @Autowired
     PersonRepository repository;
