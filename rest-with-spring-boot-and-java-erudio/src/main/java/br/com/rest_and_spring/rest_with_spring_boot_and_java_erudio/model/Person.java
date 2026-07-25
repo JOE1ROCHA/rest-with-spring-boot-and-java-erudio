@@ -25,8 +25,8 @@ public class Person implements Serializable {
     private int idade;
     private String nacionalidade;
 
-    @Column(length = 8)
-    private String gender;
+    @Column(length = 10)
+    private String genero;
 
     public Person() {}
 
@@ -62,22 +62,22 @@ public class Person implements Serializable {
         this.nacionalidade = nacionalidade;
     }
 
-    public String getGender() {
-        return gender;
+    public String getGenero() {
+        return genero;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Person person)) return false;
-        return getId() == person.getId() && Objects.equals(getNome(), person.getNome()) && Objects.equals(getIdade(), person.getIdade()) && Objects.equals(getNacionalidade(), person.getNacionalidade()) && Objects.equals(getGender(), person.getGender());
+        return getId() == person.getId() && Objects.equals(getNome(), person.getNome()) && Objects.equals(getIdade(), person.getIdade()) && Objects.equals(getNacionalidade(), person.getNacionalidade()) && Objects.equals(getGenero(), person.getGenero());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getNome(), getIdade(), getNacionalidade(), getGender());
+        return Objects.hash(getId(), getNome(), getIdade(), getNacionalidade(), getGenero());
     }
 }
